@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/* Force Tailwind v4 to use manual class strategy instead of OS preference */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer utilities {
+  /* Utility for backface visibility on 3D flip */
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  /* Utility to preserve 3D for children */
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  /* Flip utilities */
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+
+  /* Hide scrollbar for smooth mobile UI */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
